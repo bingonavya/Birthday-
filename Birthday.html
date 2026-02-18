@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payal di Birthday</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+
+        h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+
+        .date {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        .btn {
+            margin-top: 40px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            background: white;
+            color: #ff4b5c;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff4b5c;
+            color: white;
+        }
+
+        .letterBox {
+            display: none;
+            margin: 40px auto;
+            width: 80%;
+            max-width: 500px;
+            background: white;
+            color: #333;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .closeBtn {
+            float: right;
+            cursor: pointer;
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🎉 Happy Birthday 🎉</h1>
+        <h2>Dear Payal di 💖</h2>
+        <div class="date" id="date"></div>
+
+        <div class="btn">
+            <button id="openLetter">
+                Tap here Payal di 💌
+            </button>
+        </div>
+
+        <div class="letterBox" id="letterBox">
+            <span class="closeBtn" id="closeLetter">✖</span>
+            <h2>Happy Birthday di 🥳🎂</h2>
+            <p>
+                Even though sometimes we haven’t always been on the best sides,  
+                thank you so much for always guiding us through everything,  
+                for loving us, and for always listening to us.  
+                <br><br>
+                We love you. 🤍  
+                <br><br>
+                Keep smiling and growing well 🥰🫶🏻
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Date typing effect
+        let datetxt = "18 Feb";
+        let dateElement = document.getElementById("date");
+        let index = 0;
+
+        function typeDate() {
+            if (index < datetxt.length) {
+                dateElement.textContent += datetxt[index];
+                index++;
+                setTimeout(typeDate, 150);
+            }
+        }
+
+        typeDate();
+
+        // Open letter
+        document.getElementById("openLetter").onclick = function () {
+            document.getElementById("letterBox").style.display = "block";
+        };
+
+        // Close letter
+        document.getElementById("closeLetter").onclick = function () {
+            document.getElementById("letterBox").style.display = "none";
+        };
+    </script>
+
+</body>
+</html>
